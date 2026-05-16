@@ -137,18 +137,19 @@ function makeMove(index) {
         return;
     }
 
-    board[index] = currentPlayer;
-
     const cells = document.querySelectorAll('.cell');
+
+    board[index] = currentPlayer;
 
     cells[index].innerText = currentPlayer;
 
-if (currentPlayer === 'X') {
-    cells[index].style.color = '#ff4d4d';
-} else {
-    cells[index].style.color = '#4d79ff';
-}
+    if (currentPlayer === 'X') {
+        cells[index].style.color = '#ff4d4d';
+    } else {
+        cells[index].style.color = '#4d79ff';
+    }
 
+    // CHECK WINNER FIRST
     if (checkWinner()) {
 
         document.getElementById('status').innerText =
@@ -158,7 +159,10 @@ if (currentPlayer === 'X') {
         return;
     }
 
-    if (!board.includes('')) {
+    // DRAW CONDITION
+    const isDraw = board.every(cell => cell !== '');
+
+    if (isDraw) {
 
         document.getElementById('status').innerText =
             "It's a Draw!";
@@ -167,6 +171,7 @@ if (currentPlayer === 'X') {
         return;
     }
 
+    // SWITCH PLAYER
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 
     document.getElementById('status').innerText =
