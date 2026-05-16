@@ -36,33 +36,33 @@ function getProjectHTML(projectName) {
 
 function initializeProject(projectName) {
     const initializers = {
-        'tic-tac-toe': initTicTacToe,
-        'rock-paper-scissor': initRockPaperScissor,
-        'dice-rolling': initDiceRolling,
-        'coin-flip': initCoinFlip,
-        'number-guessing': initNumberGuessing,
-        'hangman': initHangman,
-        'flames': initFlames,
-        'emoji-memory': initEmojiMemoryGame,
-        'fibonacci': initFibonacci,
-        'progression-recognizer': initProgressionRecognizer,
-        'pascal-triangle': initPascalTriangle,
-        'armstrong': initArmstrong,
-        'calculator': initCalculator,
-        'collatz': initCollatz,
-        'prime-analyzer': initPrimeAnalyzer,
-        'projectile-motion': initProjectileMotion,
-        'coordinate-polar-transform': initCoordinatePolarTransform,
-        'derivative-calculator': initDerivativeCalculator,
-        'morse-code': initMorseCode,
-        'tower-of-hanoi': initTowerOfHanoi,
-        'number-converter': initNumberConverter,
-        'typing-speed-tester': initTypingSpeedTester,
-        'snake-game': initSnakeGame,
-        'spot-the-difference': initSpotTheDifference,
-        'whack-a-mole': initWhackaMole,
+        'tic-tac-toe': typeof initTicTacToe !== 'undefined' ? initTicTacToe : () => { },
+        'rock-paper-scissor': typeof initRockPaperScissor !== 'undefined' ? initRockPaperScissor : () => { },
+        'dice-rolling': typeof initDiceRolling !== 'undefined' ? initDiceRolling : () => { },
+        'coin-flip': typeof initCoinFlip !== 'undefined' ? initCoinFlip : () => { },
+        'number-guessing': typeof initNumberGuessing !== 'undefined' ? initNumberGuessing : () => { },
+        'hangman': typeof initHangman !== 'undefined' ? initHangman : () => { },
+        'flames': typeof initFlames !== 'undefined' ? initFlames : () => { },
+        'emoji-memory': typeof initEmojiMemoryGame !== 'undefined' ? initEmojiMemoryGame : () => { },
+        'fibonacci': typeof initFibonacci !== 'undefined' ? initFibonacci : () => { },
+        'progression-recognizer': typeof initProgressionRecognizer !== 'undefined' ? initProgressionRecognizer : () => { },
+        'pascal-triangle': typeof initPascalTriangle !== 'undefined' ? initPascalTriangle : () => { },
+        'armstrong': typeof initArmstrong !== 'undefined' ? initArmstrong : () => { },
+        'calculator': typeof initCalculator !== 'undefined' ? initCalculator : () => { },
+        'collatz': typeof initCollatz !== 'undefined' ? initCollatz : () => { },
+        'prime-analyzer': typeof initPrimeAnalyzer !== 'undefined' ? initPrimeAnalyzer : () => { },
+        'projectile-motion': typeof initProjectileMotion !== 'undefined' ? initProjectileMotion : () => { },
+        'coordinate-polar-transform': typeof initCoordinatePolarTransform !== 'undefined' ? initCoordinatePolarTransform : () => { },
+        'derivative-calculator': typeof initDerivativeCalculator !== 'undefined' ? initDerivativeCalculator : () => { },
+        'morse-code': typeof initMorseCode !== 'undefined' ? initMorseCode : () => { },
+        'tower-of-hanoi': typeof initTowerOfHanoi !== 'undefined' ? initTowerOfHanoi : () => { },
+        'number-converter': typeof initNumberConverter !== 'undefined' ? initNumberConverter : () => { },
+        'typing-speed-tester': typeof initTypingSpeedTester !== 'undefined' ? initTypingSpeedTester : () => { },
+        'snake-game': typeof initSnakeGame !== 'undefined' ? initSnakeGame : () => { },
+        'spot-the-difference': typeof initSpotTheDifference !== 'undefined' ? initSpotTheDifference : () => { },
+        'whack-a-mole': typeof initWhackaMole !== 'undefined' ? initWhackaMole : () => { },
     };
-
+    
     if (initializers[projectName]) {
         initializers[projectName]();
     }
@@ -78,7 +78,7 @@ function initializeProject(projectName) {
 // modular design patterns.
 //
 // If you are looking to modify, fix, or understand how a specific project works:
-// 1. Do NOT add game loops, event listeners, or variables to this file.
+// 1. Do NOT add game logics, event listeners, or variables to this file.
 // 2. Open the dedicated script file under the 'js/projects/' directory.
 //    - e.g., For Rock Paper Scissors, see: js/projects/rock-paper-scissor.js
 //    - e.g., For FLAMES, see: js/projects/flames.js
