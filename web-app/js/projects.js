@@ -7,7 +7,7 @@ function getProjectHTML(projectName) {
         'rock-paper-scissor': () => getRockPaperScissorHTML(),
         'dice-rolling': () => getDiceRollingHTML(),
         'coin-flip': () => getCoinFlipHTML(),
-        'Blackjack-21' : () => getBlackjackHTML(),
+        'blackjack-21': () => getBlackjackHTML(),
         'number-guessing': () => getNumberGuessingHTML(),
         'hangman': () => getHangmanHTML(),
         'word-scramble': () => getWordScrambleHTML(),
