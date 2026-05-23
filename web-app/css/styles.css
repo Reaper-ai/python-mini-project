@@ -1969,34 +1969,40 @@ body {
     max-width: 900px;
     width: 90%;
     max-height: 85vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
     position: relative;
     animation: slideUp 0.3s ease;
     box-shadow: var(--shadow-modal);
     border: 1px solid var(--border-color);
     margin: auto;
+    /* overflow removed to stop clipping */
 }
 
 .modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     background: var(--danger-color);
     color: var(--on-accent);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
+    z-index: 100; /* Forces button above inner content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .modal-close:hover {
     transform: scale(1.1) rotate(90deg);
 }
-
 /* ── reused section placeholder ── */
 
 /* Animations */
