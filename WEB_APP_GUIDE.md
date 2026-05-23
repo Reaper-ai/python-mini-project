@@ -1,4 +1,3 @@
-##
 <style>
 .welcome-hero {
     text-align: center;
@@ -172,7 +171,6 @@
     </div>
 </div>
 
-##
 
 ## 📑 Quick Navigation
 
