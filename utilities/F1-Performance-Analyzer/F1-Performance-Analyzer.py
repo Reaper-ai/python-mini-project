@@ -36,11 +36,11 @@ while True:
                     print(f"\n🏆 {'Pos':<4} | {'Driver':<20} | {'Constructor':<20} | {'Points':<6}")
                     print("-" * 60)
                     for item in standings[:10]:  # Top 10 Drivers
-                        pos = item['position']
-                        driver = f"{item['Driver']['givenName']} {item['Driver']['familyName']}"
-                        team = item['Constructors'][0]['name']
-                        points = item['points']
-                        print(f"{pos:<4} | {driver:<20} | {team:<20} | {points:<6}")
+                        rank_val = item['position']
+                        driver_name = f"{item['Driver']['givenName']} {item['Driver']['familyName']}"
+                        team_name = item['Constructors'][0]['name']
+                        score_points = item['points']
+                        print(f"{rank_val:<4} | {driver_name:<20} | {team_name:<20} | {score_points:<6}")
                 else:
                     print(f"❌ Error fetching data: Status code {response.status}")
         except Exception as e:
@@ -60,11 +60,11 @@ while True:
                     print(f"\n🏆 {'Pos':<4} | {'Constructor':<25} | {'Nationality':<15} | {'Points':<6}")
                     print("-" * 60)
                     for item in standings:
-                        pos = item['position']
-                        team = item['Constructor']['name']
-                        nat = item['Constructor']['nationality']
-                        points = item['points']
-                        print(f"{pos:<4} | {team:<25} | {nat:<15} | {points:<6}")
+                        rank_val = item['position']
+                        team_name = item['Constructor']['name']
+                        team_country = item['Constructor']['nationality']
+                        score_points = item['points']
+                        print(f"{rank_val:<4} | {team_name:<25} | {team_country:<15} | {score_points:<6}")
                 else:
                     print(f"❌ Error fetching data: Status code {response.status}")
         except Exception as e:
